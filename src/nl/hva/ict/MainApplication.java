@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import nl.hva.ict.controllers.MainController;
+import nl.hva.ict.data.MySQL.MySQLHotels;
+import nl.hva.ict.data.MySQL.MySQLLodges;
 import nl.hva.ict.data.MySQL.MySQLReizigers;
 
 public class MainApplication extends Application {
@@ -15,8 +17,8 @@ public class MainApplication extends Application {
 
     //MySQL
     private static final String MYSQL_HOST = "jdbc:mysql://localhost:3306/big_five_safari?autoReconnect=true&serverTimezone=UTC&useSSL=False";
-    private static final String MYSQL_USERNAME = "";
-    private static final String MYSQL_PASSWORD = "";
+    private static final String MYSQL_USERNAME = "root";
+    private static final String MYSQL_PASSWORD = "hva020502!";
 
     //Mongo NoSQL
     private static final String NOSQL_HOST = "mongodb://host1:27017";
@@ -28,6 +30,8 @@ public class MainApplication extends Application {
 
     //Static dataconnectors
     private static MySQLReizigers mySQLReizigers = new MySQLReizigers();
+    private static MySQLHotels mySQLHotels = new MySQLHotels();
+    private static MySQLLodges mySQLLodges= new MySQLLodges();
     private final int WIDTH = 800;
     private final int HEIGHT = 800;
 
@@ -60,6 +64,10 @@ public class MainApplication extends Application {
     }
 
     public static MySQLReizigers getMySQLReizigers() { return mySQLReizigers; }
+
+    public static MySQLHotels getMySQLHotels() { return mySQLHotels; }
+
+    public static MySQLLodges getMySQLLodges() { return mySQLLodges; }
 
     @Override
     public void start(Stage stage) {

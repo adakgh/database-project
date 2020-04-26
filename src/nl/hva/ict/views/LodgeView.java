@@ -51,11 +51,11 @@ public class LodgeView extends View {
 
         //zet velden in leftPane
         GridPane leftPane = new GridPane();
-        leftPane.setMinWidth(400);
+        leftPane.setMinWidth(390);
         leftPane.setPadding(new Insets(10, 10, 10, 10));
         leftPane.setHgap(5);
         leftPane.setVgap(5);
-        leftPane.add(new Label("Accommodatiescode"), 0, 0);
+        leftPane.add(new Label("Accommodatiecode"), 0, 0);
         leftPane.add(txtAccommodatieCode, 1, 0);
         leftPane.add(new Label("Naam"), 0, 1);
         leftPane.add(txtNaam, 1, 1);
@@ -63,7 +63,7 @@ public class LodgeView extends View {
         leftPane.add(txtStad, 1, 2);
         leftPane.add(new Label("Land"), 0, 3);
         leftPane.add(txtLand, 1, 3);
-        leftPane.add(new Label("Prijs per nacht"), 0, 4);
+        leftPane.add(new Label("Prijs per week"), 0, 4);
         leftPane.add(txtPrijsPerWeek, 1, 4);
         leftPane.add(new Label("Kamertype"), 0, 5);
         leftPane.add(txtKamertype, 1, 5);
@@ -88,7 +88,7 @@ public class LodgeView extends View {
         lodgeViewListView = new ListView<>();
         btUpdateData = new Button(" Refresh lijst ");
         VBox rightPane = new VBox();
-        rightPane.setMinWidth(300);
+        rightPane.setMinWidth(380);
         rightPane.setSpacing(5);
         rightPane.getChildren().addAll(lodgeViewListView, btUpdateData);
         rightPane.setAlignment(Pos.CENTER_RIGHT);

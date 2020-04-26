@@ -50,7 +50,7 @@ public class ReizigersView extends View {
 
         //zet velden in leftPane
         GridPane leftPane = new GridPane();
-        leftPane.setMinWidth(400);
+        leftPane.setMinWidth(390);
         leftPane.setPadding(new Insets(10, 10, 10, 10));
         leftPane.setHgap(5);
         leftPane.setVgap(5);
@@ -87,7 +87,7 @@ public class ReizigersView extends View {
         reizigersViewListView = new ListView<>();
         btUpdateData = new Button(" Refresh lijst ");
         VBox rightPane = new VBox();
-        rightPane.setMinWidth(300);
+        rightPane.setMinWidth(380);
         rightPane.setSpacing(5);
         rightPane.getChildren().addAll(reizigersViewListView, btUpdateData);
         rightPane.setAlignment(Pos.CENTER_RIGHT);
