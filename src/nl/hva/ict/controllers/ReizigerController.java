@@ -58,6 +58,7 @@ public class ReizigerController extends Controller {
         reizigersView.getTxtPostcode().setText(currentReiziger.getPostcode());
         reizigersView.getTxtPlaats().setText(currentReiziger.getPlaats());
         reizigersView.getTxtLand().setText(currentReiziger.getLand());
+        reizigersView.getComboReistSamenMet().setPromptText(currentReiziger.getHoofdreiziger());
     }
 
     private void getItemsComboBox(){

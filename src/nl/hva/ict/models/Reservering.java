@@ -1,15 +1,17 @@
 package nl.hva.ict.models;
 
+import java.util.Date;
+
 public class Reservering {
 
     private int idReservering;
     private String accommodatieCode;
     private String reizigersCode;
-    private String aankomstDatum;
-    private String vertrekDatum;
+    private Date aankomstDatum;
+    private Date vertrekDatum;
     private boolean betaald;
 
-    public Reservering(int idReservering, String accommodatieCode, String reizigersCode, String aankomstDatum, String vertrekDatum, boolean betaald) {
+    public Reservering(int idReservering, String accommodatieCode, String reizigersCode, Date aankomstDatum, Date vertrekDatum, boolean betaald) {
         this.idReservering = idReservering;
         this.accommodatieCode = accommodatieCode;
         this.reizigersCode = reizigersCode;
@@ -45,19 +47,19 @@ public class Reservering {
         this.reizigersCode = reizigersCode;
     }
 
-    public String getAankomstDatum() {
+    public Date getAankomstDatum() {
         return aankomstDatum;
     }
 
-    public void setAankomstDatum(String aankomstDatum) {
+    public void setAankomstDatum(Date aankomstDatum) {
         this.aankomstDatum = aankomstDatum;
     }
 
-    public String getVertrekDatum() {
+    public Date getVertrekDatum() {
         return vertrekDatum;
     }
 
-    public void setVertrekDatum(String vertrekDatum) {
+    public void setVertrekDatum(Date vertrekDatum) {
         this.vertrekDatum = vertrekDatum;
     }
 

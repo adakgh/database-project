@@ -22,6 +22,10 @@ public class BoekingsoverzichtView extends View {
         rootPane.getChildren().addAll(boekingsOverzichtListView);
     }
 
+    public ListView<BoekingsOverzicht> getBoekingsOverzichtListView() {
+        return boekingsOverzichtListView;
+    }
+
     @Override
     public Parent getRoot() {
         return rootPane;

@@ -11,15 +11,16 @@ public class Accommodatie implements Identifable, Serializable {
     private String land;
     private String kamer;
     private int personen;
-    private enum soort {Hotel, Lodge}
+    private String soort;
 
-    public Accommodatie(String accommodatieCode, String naam, String stad, String land, String kamer, int personen) {
+    public Accommodatie(String accommodatieCode, String naam, String stad, String land, String kamer, int personen, String soort) {
         this.accommodatieCode = accommodatieCode;
         this.naam = naam;
         this.stad = stad;
         this.land = land;
         this.kamer = kamer;
         this.personen = personen;
+        this.soort = soort;
     }
 
     public Accommodatie(){
@@ -73,8 +74,16 @@ public class Accommodatie implements Identifable, Serializable {
         this.personen = personen;
     }
 
+    public String getSoort() {
+        return soort;
+    }
+
+    public void setSoort(String soort) {
+        this.soort = soort;
+    }
+
     @Override
     public String toString() {
-        return accommodatieCode + naam + stad + land + kamer + personen;
+        return naam +  " - " + stad +  " - " + land;
     }
 }

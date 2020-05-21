@@ -7,13 +7,11 @@ import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import nl.hva.ict.controllers.MainController;
-import nl.hva.ict.data.MySQL.MySQLHotels;
-import nl.hva.ict.data.MySQL.MySQLLodges;
-import nl.hva.ict.data.MySQL.MySQLReizigers;
+import nl.hva.ict.data.MySQL.*;
 
 public class MainApplication extends Application {
 
-    private static final String TITLE = "Practicumopdracht DB2";
+    private static final String TITLE = "Practicumopdracht DB2 - Ghizlane el Adak";
 
     //MySQL
     private static final String MYSQL_HOST = "jdbc:mysql://localhost:3306/big_five_safari?autoReconnect=true&serverTimezone=UTC&useSSL=False";
@@ -31,7 +29,10 @@ public class MainApplication extends Application {
     //Static dataconnectors
     private static MySQLReizigers mySQLReizigers = new MySQLReizigers();
     private static MySQLHotels mySQLHotels = new MySQLHotels();
-    private static MySQLLodges mySQLLodges= new MySQLLodges();
+    private static MySQLLodges mySQLLodges = new MySQLLodges();
+    private static MySQLBoekingsOverzicht mySQLBoekingsOverzicht= new MySQLBoekingsOverzicht();
+    private static MySQLAccommodaties mySQLAccommodaties = new MySQLAccommodaties();
+
     private final int WIDTH = 800;
     private final int HEIGHT = 800;
 
@@ -68,6 +69,12 @@ public class MainApplication extends Application {
     public static MySQLHotels getMySQLHotels() { return mySQLHotels; }
 
     public static MySQLLodges getMySQLLodges() { return mySQLLodges; }
+
+    public static MySQLBoekingsOverzicht getMySQLBoekingsOverzicht() { return mySQLBoekingsOverzicht; }
+
+    public static MySQLAccommodaties getMySQLAccommodaties() {
+        return mySQLAccommodaties;
+    }
 
     @Override
     public void start(Stage stage) {

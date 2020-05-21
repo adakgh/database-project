@@ -8,12 +8,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import nl.hva.ict.models.BoekingsOverzicht;
+import nl.hva.ict.models.Reiziger;
 
 public class GeboektOpView extends View {
 
     private GridPane rootPane;
-    private ListView<BoekingsOverzicht> boekingsOverzichtListView;
+    private ListView<Reiziger> boekingsOverzichtListView;
     private DatePicker datePicker;
     private ComboBox comboBoxAccommodaties;
 
@@ -50,7 +50,7 @@ public class GeboektOpView extends View {
         return rootPane;
     }
 
-    public ListView<BoekingsOverzicht> getBoekingsOverzichtListView() {
+    public ListView<Reiziger> getBoekingsOverzichtListView() {
         return boekingsOverzichtListView;
     }
 
