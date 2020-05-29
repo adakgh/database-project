@@ -18,7 +18,7 @@ public class MySQLHotels extends MySQL<Hotel> {
 
     private void load() {
 
-        String sql = "SELECT * FROM Hotel INNER JOIN Accommodatie ON `hotel`.accommodatieCode = `accommodatie`.accommodatieCode";
+        String sql = "SELECT * FROM Accommodatie INNER JOIN Hotel ON Accommodatie.accommodatieCode = Hotel.accommodatieCode";
 
         try {
             PreparedStatement ps = getStatement(sql);
@@ -64,7 +64,19 @@ public class MySQLHotels extends MySQL<Hotel> {
 
     @Override
     public void remove(Hotel object) {
+        String sql = "{CALL verwijderAccommodatie(?)}";
 
+        if (object == null)
+            return;
+
+        try {
+            PreparedStatement ps = getStatement(sql);
+            ps.setString(1, object.getAccommodatieCode());
+            ResultSet rs = executeSelectPreparedStatement(ps);
+            reload();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void reload() {

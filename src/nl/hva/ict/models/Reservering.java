@@ -10,6 +10,7 @@ public class Reservering {
     private Date aankomstDatum;
     private Date vertrekDatum;
     private boolean betaald;
+    private int verblijving;
 
     public Reservering(int idReservering, String accommodatieCode, String reizigersCode, Date aankomstDatum, Date vertrekDatum, boolean betaald) {
         this.idReservering = idReservering;
@@ -69,6 +70,14 @@ public class Reservering {
 
     public void setBetaald(boolean betaald) {
         this.betaald = betaald;
+    }
+
+    public int getVerblijving() {
+        return verblijving;
+    }
+
+    public void setVerblijving(int verblijving) {
+        this.verblijving = verblijving;
     }
 
     @Override

@@ -47,13 +47,13 @@ public class LodgeController extends Controller {
 
     private void getItemsInFields() {
         Lodge currentLodge = lodgeView.getLodgeViewListView().getSelectionModel().getSelectedItem();
-        lodgeView.getTxtAccommodatieCode().setText(currentLodge.getAccommodatieCode());
+        lodgeView.getTxtAccommodatieCode().setText((currentLodge.getAccommodatieCode()));
         lodgeView.getTxtNaam().setText(currentLodge.getNaam());
         lodgeView.getTxtStad().setText(currentLodge.getStad());
         lodgeView.getTxtLand().setText(currentLodge.getLand());
         lodgeView.getTxtKamertype().setText(currentLodge.getKamer());
+        lodgeView.getTxtAantalPersonen().setText((String.valueOf(currentLodge.getPersonen())));
         lodgeView.getTxtPrijsPerWeek().setText(String.valueOf(currentLodge.getPrijs()));
-        lodgeView.getTxtAantalPersonen().setText(String.valueOf(currentLodge.getPersonen()));
         lodgeView.getCheckAutohuur().setSelected(currentLodge.isAutoHuur());
     }
 

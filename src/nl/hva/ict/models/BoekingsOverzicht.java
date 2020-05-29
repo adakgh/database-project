@@ -40,8 +40,7 @@ public class BoekingsOverzicht implements Identifable {
 
     @Override
     public String toString() {
-        return reiziger.getVoornaam() + " " + reiziger.getAchternaam() + " - reist van " + reservering.getVertrekDatum()
-                + " tot " + reservering.getAankomstDatum() + " en verblijft in: " + accommodatie.getNaam() + " in "
-                + accommodatie.getStad() + " - " + accommodatie.getLand();
+        return reiziger.getVoornaam() + " " + reiziger.getAchternaam() + " - reist tot " + reservering.getAankomstDatum() + " en verblijft in: " + accommodatie.getNaam() + " in "
+                + accommodatie.getStad() + " - " + accommodatie.getLand() + " voor " + reservering.getVerblijving() + " dagen" ;
     }
 }

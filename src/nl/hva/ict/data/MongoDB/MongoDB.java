@@ -13,7 +13,7 @@ public abstract class MongoDB implements Data {
 
     private MongoClient mongoClient;
     private MongoDatabase mongoDatabase;
-    private MongoCollection<Document> collection;
+    protected MongoCollection<Document> collection;
 
 
     public MongoDB() {

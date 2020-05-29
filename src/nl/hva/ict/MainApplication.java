@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import nl.hva.ict.controllers.MainController;
+import nl.hva.ict.data.MongoDB.MongoReizigers;
 import nl.hva.ict.data.MySQL.*;
 
 public class MainApplication extends Application {
@@ -14,13 +15,13 @@ public class MainApplication extends Application {
     private static final String TITLE = "Practicumopdracht DB2 - Ghizlane el Adak";
 
     //MySQL
-    private static final String MYSQL_HOST = "jdbc:mysql://localhost:3306/big_five_safari?autoReconnect=true&serverTimezone=UTC&useSSL=False";
+    private static final String MYSQL_HOST = "jdbc:mysql://localhost:3306/big_five_safari?autoReconnect=true&serverTimezone=Europe/Amsterdam&useSSL=False";
     private static final String MYSQL_USERNAME = "root";
     private static final String MYSQL_PASSWORD = "hva020502!";
 
     //Mongo NoSQL
-    private static final String NOSQL_HOST = "mongodb://host1:27017";
-    private static final String NOSQL_DATABASE = "";
+    private static final String NOSQL_HOST = "mongodb+srv://user:userpassword@cluster0-ireom.azure.mongodb.net/test?retryWrites=true&w=majority";
+    private static final String NOSQL_DATABASE = "big_five_safari";
 
     //JavaFX
     private static Stage stage;
@@ -32,6 +33,8 @@ public class MainApplication extends Application {
     private static MySQLLodges mySQLLodges = new MySQLLodges();
     private static MySQLBoekingsOverzicht mySQLBoekingsOverzicht= new MySQLBoekingsOverzicht();
     private static MySQLAccommodaties mySQLAccommodaties = new MySQLAccommodaties();
+
+    private static MongoReizigers mongoReizigers = new MongoReizigers();
 
     private final int WIDTH = 800;
     private final int HEIGHT = 800;
@@ -74,6 +77,10 @@ public class MainApplication extends Application {
 
     public static MySQLAccommodaties getMySQLAccommodaties() {
         return mySQLAccommodaties;
+    }
+
+    public static MongoReizigers getMongoReizigers() {
+        return mongoReizigers;
     }
 
     @Override

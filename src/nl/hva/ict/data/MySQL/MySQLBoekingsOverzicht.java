@@ -144,6 +144,48 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
 
     @Override
     public List<BoekingsOverzicht> getAll() {
+        List<BoekingsOverzicht> boekingsOverzicht = new ArrayList<>();
+
+        String sql = "SELECT * FROM Boekingsoverzicht";
+
+        try {
+            PreparedStatement ps = getStatement(sql);
+            ResultSet rs = executeSelectPreparedStatement(ps);
+
+            while (rs.next()) {
+                String reizigersnaam = rs.getString("reizigersNaam");
+                String naam = rs.getString("naam");
+                String stad = rs.getString("stad");
+                String land = rs.getString("land");
+                String kamer = rs.getString("kamer");
+                Date datum = rs.getDate("aankomstDatum");
+                Integer dagen = rs.getInt("verblijving");
+                boolean betaald = rs.getBoolean("betaald");
+
+                Reiziger reiziger = new Reiziger();
+                String[] split = reizigersnaam.split("\\s");
+                reiziger.setVoornaam(split[0]);
+                reiziger.setAchternaam(split[1]);
+
+                Accommodatie accommodatie = new Accommodatie();
+                accommodatie.setNaam(naam);
+                accommodatie.setStad(stad);
+                accommodatie.setLand(land);
+                accommodatie.setKamer(kamer);
+
+
+                Reservering reservering = new Reservering();
+                reservering.setAankomstDatum(datum);
+                reservering.setBetaald(betaald);
+                reservering.setVerblijving(dagen);
+
+                BoekingsOverzicht boeking = new BoekingsOverzicht(reiziger, accommodatie, reservering);
+                boekingsOverzicht.add(boeking);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         return boekingsOverzicht;
     }
 
