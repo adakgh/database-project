@@ -33,9 +33,9 @@ public class MySQLHotels extends MySQL<Hotel> {
                 String kamer = rs.getString("kamer");
                 int personen = rs.getInt("personen");
                 boolean ontbijt = rs.getBoolean("ontbijt");
+                String soort = rs.getString("soort");
 
-                Hotel hotel = new Hotel(accommodatieCode, naam, stad, land, prijsPerNacht, kamer, personen, ontbijt);
-                hotels.add(hotel);
+                hotels.add(new Hotel(accommodatieCode, naam, stad, land, prijsPerNacht, kamer, personen, ontbijt, soort));
             }
         } catch (SQLException e) {
             e.printStackTrace();

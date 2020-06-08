@@ -42,36 +42,35 @@ public class MongoReizigers extends MongoDB {
 
     }
 
-    public Reiziger getOneReizigers(String reizigersId){
-        this.selectedCollection("reizigers");
-        Document myDoc = collection.find(Filters.eq("reizigerscode", reizigersId)).first();
-        String reizigersCode = (String)myDoc.get("reizigerCode");
-        String voornaam = (String)myDoc.get("voornaam");
-        String achternaam = (String)myDoc.get("achternaam");
-        String adres = (String)myDoc.get("adres");
-        String postcode = (String)myDoc.get("postcode");
-        String plaats = (String)myDoc.get("plaats");
-        String land = (String)myDoc.get("land");
-        String hoofdreiziger = (String)myDoc.get("hoofdreiziger");
-        return new Reiziger(reizigersCode, voornaam, achternaam, adres, postcode, plaats, land, hoofdreiziger);
+    public Reiziger getOneReizigers(String reizigersId) {
+        this.selectedCollection("reiziger");
+        Document myDoc = collection.find(Filters.eq("reizigersCode", reizigersId)).first();
+        String reizigerCode = (String) myDoc.get("reizigersCode");
+        String voornaam = (String) myDoc.get("voornaam");
+        String achternaam = (String) myDoc.get("achternaam");
+        String adres = (String) myDoc.get("adres");
+        String postcode = (String) myDoc.get("postcode");
+        String plaats = (String) myDoc.get("plaats");
+        String land = (String) myDoc.get("land");
+        String hoofdreiziger = (String) myDoc.get("hoofdreiziger");
+        return new Reiziger(reizigerCode, voornaam, achternaam, adres, postcode, plaats, land, hoofdreiziger);
     }
 
 
-    public void load(){
+    public void load() {
         this.selectedCollection("reiziger");
         MongoCursor<Document> cursor = collection.find().iterator();
         try {
             while (cursor.hasNext()) {
-
                 Document tempReiziger = cursor.next();
-                String reizigersCode = (String)tempReiziger.get("reizigersCode");
-                String voornaam = (String)tempReiziger.get("voornaam");
-                String achternaam = (String)tempReiziger.get("achternaam");
-                String adres = (String)tempReiziger.get("adres");
-                String postcode = (String)tempReiziger.get("postcode");
-                String plaats = (String)tempReiziger.get("plaats");
-                String land = (String)tempReiziger.get("land");
-                String hoofdreiziger = (String)tempReiziger.get("hoofdreiziger");
+                String reizigersCode = (String) tempReiziger.get("reizigersCode");
+                String voornaam = (String) tempReiziger.get("voornaam");
+                String achternaam = (String) tempReiziger.get("achternaam");
+                String adres = (String) tempReiziger.get("adres");
+                String postcode = (String) tempReiziger.get("postcode");
+                String plaats = (String) tempReiziger.get("plaats");
+                String land = (String) tempReiziger.get("land");
+                String hoofdreiziger = (String) tempReiziger.get("hoofdreiziger");
                 Reiziger reiziger = new Reiziger(reizigersCode, voornaam, achternaam, adres, postcode, plaats, land, hoofdreiziger);
                 reizigers.add(reiziger);
             }

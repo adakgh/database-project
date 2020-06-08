@@ -18,38 +18,40 @@ public class ReizigerController extends Controller {
                 .addListener(e -> getItemsInFields());
         reizigersView.getComboReistSamenMet().getSelectionModel().selectedItemProperty()
                 .addListener(e -> getItemsComboBox());
-        reizigersView.getBtSave().setOnAction(e-> save());
-        reizigersView.getBtUpdateData().setOnAction(e-> refreshData());
-        reizigersView.getBtNew().setOnAction(e-> insert());
-        reizigersView.getBtDelete().setOnAction(e-> delete());
+        reizigersView.getBtSave().setOnAction(e -> save());
+        reizigersView.getBtUpdateData().setOnAction(e -> refreshData());
+        reizigersView.getBtNew().setOnAction(e -> insert());
+        reizigersView.getBtDelete().setOnAction(e -> delete());
         loadData();
     }
 
-    private void loadData(){
-        //haal de waardes op uit de database
+    private void loadData() {
+        // haal de waardes op uit de database voor MySQL
+        // reizigers = FXCollections.observableArrayList(MainApplication.getMySQLReizigers().getAll());
+
+        // haal de waardes op uit de database voor NOSQL
         reizigers = FXCollections.observableArrayList(MainApplication.getMongoReizigers().getAll());
         reizigersView.getReizigersViewListView().setItems(reizigers);
         reizigersView.getComboReistSamenMet().getSelectionModel().select(null);
     }
 
-
-    private void refreshData(){
+    private void refreshData() {
         MainApplication.getMySQLReizigers().reload();
     }
 
-    private void save(){
-      // bewaar (update) record
+    private void save() {
+        // bewaar (update) record
     }
 
-    private void delete(){
+    private void delete() {
         // delete dit record
     }
 
-    private void insert(){
+    private void insert() {
         //Voeg toe
     }
 
-    private void getItemsInFields(){
+    private void getItemsInFields() {
         Reiziger currentReiziger = reizigersView.getReizigersViewListView().getSelectionModel().getSelectedItem();
         reizigersView.getTxtReizigersCode().setText(currentReiziger.getReizigersCode());
         reizigersView.getTxtVoornaam().setText(currentReiziger.getVoornaam());
@@ -61,7 +63,7 @@ public class ReizigerController extends Controller {
         reizigersView.getComboReistSamenMet().setPromptText(currentReiziger.getHoofdreiziger());
     }
 
-    private void getItemsComboBox(){
+    private void getItemsComboBox() {
 
     }
 

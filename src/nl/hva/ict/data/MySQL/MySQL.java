@@ -7,7 +7,7 @@ import nl.hva.ict.data.Data;
 import java.sql.*;
 import java.util.Properties;
 
-public abstract class MySQL <T extends Identifable> implements Data<T> {
+public abstract class MySQL<T extends Identifable> implements Data<T> {
 
     protected Connection connection;
     private Properties properties;
@@ -51,19 +51,25 @@ public abstract class MySQL <T extends Identifable> implements Data<T> {
     }
 
     public PreparedStatement getStatement(String sql) throws SQLException {
-        if (this.connection == null){ connect();}
+        if (this.connection == null) {
+            connect();
+        }
         return connection.prepareStatement(sql);
     }
 
 
     public void executeUpdatePreparedStatement(PreparedStatement ps) throws SQLException {
-        if (this.connection == null){ connect();}
+        if (this.connection == null) {
+            connect();
+        }
         ps.executeUpdate();
     }
 
 
     public ResultSet executeSelectPreparedStatement(PreparedStatement ps) throws SQLException {
-        if (this.connection == null){ connect();}
+        if (this.connection == null) {
+            connect();
+        }
         return ps.executeQuery();
     }
 

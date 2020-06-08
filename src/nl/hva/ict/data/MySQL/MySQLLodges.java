@@ -33,9 +33,9 @@ public class MySQLLodges extends MySQL<Lodge> {
                 String kamer = rs.getString("kamer");
                 int personen = rs.getInt("personen");
                 boolean autoHuur = rs.getBoolean("autoHuur");
+                String soort = rs.getString("soort");
 
-                Lodge lodge = new Lodge(accommodatieCode, naam, stad, land, prijsPerWeek, kamer, personen, autoHuur);
-                lodges.add(lodge);
+                lodges.add(new Lodge(accommodatieCode, naam, stad, land, prijsPerWeek, kamer, personen, autoHuur, soort));
             }
         } catch (SQLException e) {
             e.printStackTrace();

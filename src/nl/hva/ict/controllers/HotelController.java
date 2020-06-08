@@ -40,9 +40,8 @@ public class HotelController extends Controller {
     private void delete() {
         // delete dit record
         Hotel currentHotel = hotelView.getHotelsViewListView().getSelectionModel().getSelectedItem();
-        MainApplication.getMySQLHotels().remove(currentHotel);
+        hotelView.getHotelsViewListView().getItems().remove(currentHotel);
         refreshData();
-        loadData();
     }
 
     private void insert() {
