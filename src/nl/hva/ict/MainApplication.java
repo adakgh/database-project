@@ -12,12 +12,12 @@ import nl.hva.ict.data.MySQL.*;
 
 public class MainApplication extends Application {
 
-    private static final String TITLE = "Practicumopdracht DB2 - Ghizlane el Adak";
+    private static final String TITLE = "Practicumopdracht DB2";
 
     //MySQL
     private static final String MYSQL_HOST = "jdbc:mysql://localhost:3306/big_five_safari?autoReconnect=true&serverTimezone=Europe/Amsterdam&useSSL=False";
     private static final String MYSQL_USERNAME = "root";
-    private static final String MYSQL_PASSWORD = "hva020502!";
+    private static final String MYSQL_PASSWORD = "";
 
     //Mongo NoSQL
     private static final String NOSQL_HOST = "mongodb+srv://user:userpassword@cluster0-ireom.azure.mongodb.net/test?retryWrites=true&w=majority";

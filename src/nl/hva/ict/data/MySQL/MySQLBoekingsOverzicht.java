@@ -22,7 +22,9 @@ public class MySQLBoekingsOverzicht extends MySQL<BoekingsOverzicht> {
     }
 
     public void load(){
-        String sql = "SELECT Reservering.*, Accommodatie.*, Reiziger.* FROM ((Reservering INNER JOIN Accommodatie ON Reservering.accommodatieCode = Accommodatie.accommodatieCode) INNER JOIN Reiziger ON Reservering.Reizigerscode = Reiziger.Reizigerscode)";
+        String sql = "SELECT Reservering.*, Accommodatie.*, Reiziger.* " +
+                "FROM ((Reservering INNER JOIN Accommodatie ON Reservering.accommodatieCode = Accommodatie.accommodatieCode) " +
+                "INNER JOIN Reiziger ON Reservering.Reizigerscode = Reiziger.Reizigerscode)";
 
         try {
             PreparedStatement ps = getStatement(sql);
