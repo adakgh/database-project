@@ -1,5 +1,5 @@
 # database-project
-Practicing databases by building a JavaFX application in combination with a MySQL database and MongoDB NoSQL database.
+Practising databases by building a JavaFX application in combination with a MySQL database and MongoDB NoSQL database.
 
 The application is made by making use of:
 - Entity Relationship Diagrams
